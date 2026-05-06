@@ -1,5 +1,5 @@
 {% set name = "aioca" %}
-{% set version = "2.0" %}
+{% set version = "2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aioca-{{ version }}.tar.gz
-  sha256: 4d0bb637a0f9f7081cf0abaa8af10b66d50e3e8f7a6235d5fda9415a946703af
+  sha256: 094b815fa26c0fec705ecaf9c1814883b3cf3b5ea973baeb669959661391b5bc
 
 build:
   noarch: python
