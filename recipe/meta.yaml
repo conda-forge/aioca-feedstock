@@ -12,13 +12,14 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=64
+    - setuptools-scm >=6.2
   run:
     - python >={{ python_min }}
     - numpy
@@ -30,6 +31,7 @@ test:
     - aioca
   commands:
     - pip check
+    - python -c "import importlib.metadata as m; v = m.version('aioca'); assert v == '{{ version }}', v"
   requires:
     - pip
     - python {{ python_min }}
